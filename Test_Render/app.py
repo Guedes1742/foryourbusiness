@@ -18,9 +18,10 @@ def run_process():
     pyautogui.write('Calculadora')
     pyautogui.press('enter')
     return jsonify({"status": "Calculadora aberta com sucesso!"})
-    return jsonify({"error": "Processo não reconhecido"}), 400
+  
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
