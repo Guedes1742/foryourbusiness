@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RPA Assistant</title>
+</head>
+<body>
+    <h1>Assistente de Automação</h1>
+    <button onclick="runProcess()">Abrir Calculadora</button>
+
+    <script>
+        function runProcess() {
+            fetch('/run-process', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ process: 'abrir_calculadora' })
+            })
+            .then(response => response.json())
+            .then(data => alert(data.status || data.error));
+        }
+    </script>
+</body>
+</html>
