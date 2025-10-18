@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, jsonify
-import pyautogui
 import time
 
 app = Flask(__name__)
@@ -13,15 +12,14 @@ def index():
 @app.route('/run-process', methods=['POST'])
 def run_process():
   
-    pyautogui.press('win')
+  
     time.sleep(1)
-    pyautogui.write('Calculadora')
-    pyautogui.press('enter')
     return jsonify({"status": "Calculadora aberta com sucesso!"})
   
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
